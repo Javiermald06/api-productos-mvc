@@ -18,3 +18,5 @@ app.use('/api/productos', productoRoutes);
 app.use((req, res) => { 
   res.status(404).json({ mensaje: 'Ruta no encontrada' }); 
 }); 
+
+module.exports = app;
