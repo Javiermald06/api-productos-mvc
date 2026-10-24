@@ -22,8 +22,8 @@ Number(stock),usuario };
  
   async actualizar(id, { nombre, precio, stock = 0 }) { 
     const [resultado] = await db.query( 
-      'UPDATE productos SET nombre = ?, precio = ?, stock = ?, usuario = ? WHERE id = ?', 
-      [nombre, precio, stock,usuario, id] 
+      'UPDATE productos SET nombre = ?, precio = ?, stock = ? WHERE id = ?', 
+      [nombre, precio, stock, id] 
     ); 
     return resultado.affectedRows; 
   }, 
