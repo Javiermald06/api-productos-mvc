@@ -13,8 +13,8 @@ const Producto = {
  
   async crear({ nombre, precio, stock = 0 }) { 
     const [resultado] = await db.query( 
-      'INSERT INTO productos (nombre, precio, stock) VALUES (?, ?, ?)', 
-      [nombre, precio, stock] 
+      'INSERT INTO productos (nombre, precio, stock,usuario) VALUES (?, ?, ?, ?)', 
+      [nombre, precio, stock,usuario] 
     ); 
     return { id: resultado.insertId, nombre, precio: Number(precio), stock: 
 Number(stock) }; 
