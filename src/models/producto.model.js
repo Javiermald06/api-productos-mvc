@@ -11,19 +11,19 @@ const Producto = {
     return filas[0]; 
   }, 
  
-  async crear({ nombre, precio, stock = 0 }) { 
+  async crear({ nombre, precio, stock = 0, usuario }) { 
     const [resultado] = await db.query( 
-      'INSERT INTO productos (nombre, precio, stock,usuario) VALUES (?, ?, ?, ?)', 
-      [nombre, precio, stock,usuario] 
+      'INSERT INTO productos (nombre, precio, stock, usuario) VALUES (?, ?, ?, ?)', 
+      [nombre, precio, stock, usuario] 
     ); 
     return { id: resultado.insertId, nombre, precio: Number(precio), stock: 
-Number(stock) }; 
+Number(stock),usuario }; 
   }, 
  
   async actualizar(id, { nombre, precio, stock = 0 }) { 
     const [resultado] = await db.query( 
-      'UPDATE productos SET nombre = ?, precio = ?, stock = ? WHERE id = ?', 
-      [nombre, precio, stock, id] 
+      'UPDATE productos SET nombre = ?, precio = ?, stock = ?, usuario = ? WHERE id = ?', 
+      [nombre, precio, stock,usuario, id] 
     ); 
     return resultado.affectedRows; 
   }, 
