@@ -14,5 +14,5 @@ CREATE TABLE IF NOT EXISTS productos (
 ); 
 
 INSERT INTO productos (nombre, precio, stock, usuario) VALUES 
-('Mouse inalámbrico', 45.90, 20, ‘SENATI’), 
-('Teclado mecánico', 129.00, 10, ‘SENATI’); 
+('Mouse inalámbrico', 45.90, 20, 'SENATI'), 
+('Teclado mecánico', 129.00, 10, 'SENATI'); 
