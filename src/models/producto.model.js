@@ -33,4 +33,4 @@ Number(stock),usuario };
     return resultado.affectedRows; 
   } 
 }; 
-module.exports = Producto;Producto;
+module.exports = Producto;
